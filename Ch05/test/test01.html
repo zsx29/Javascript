@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEST1</title>
+  </head>
+  <style>
+    #theBody {
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      left: 120px;
+    }
+  </style>
+  <body>
+    <div id="theBody">
+      <button onclick="setColor()">changeColor</button>
+    </div>
+  </body>
+  <script>
+    function setColor() {
+      var arrColor = ["#ff0", "#6c0", "#fcf", "#cf0", "#39f"];
+      var arrNum = Math.floor(Math.random() * arrColor.length);
+      var bodyTag = document.getElementById("theBody");
+      bodyTag.style.backgroundColor = arrColor[arrNum];
+    }
+  </script>
+</html>

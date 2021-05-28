@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 객체 생성자 함수
+    function CheckWeight(name, heigth, weight) {
+      // 생성한 객체에 이름, 키, 몸무게 등의 속성을 등록한다.
+      this.userName = name;
+      this.userHeight = heigth;
+      this.userWeight = weight;
+      this.minWeight;
+      this.maxWeight;
+      this.getInfo = function () {
+        // 생성한 객체에 각 속성값을 출력하는 함수를 등록한다.
+        var str = "";
+        str += "이름" + this.userName + ", ";
+        str += "키" + this.userHeight + ", ";
+        str += "몸무게" + this.userWeight + "<br>";
+        return str;
+      };
+      this.getResult = function () {
+        this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+        this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+        if (
+          this.userWeight >= this.minWeight &&
+          this.userHeight <= this.maxWeight
+        ) {
+          return "정상 몸무게입니다.";
+        } else if (this.userWeight < this.minWeight) {
+          return "정상 몸무게보다 미달입니다.";
+        } else {
+          return "정상 몸무게보다 초과입니다.";
+        }
+      };
+    }
+
+    var park = new CheckWeight("박재형", 178, 78);
+    var sane = new CheckWeight("개똥산", 167, 80);
+    console.log(park);
+    console.log(sane);
+
+    document.write(park.getInfo());
+    document.write(park.getResult());
+  </script>
+</html>
