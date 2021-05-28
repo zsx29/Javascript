@@ -1,0 +1,30 @@
+<!-- // return 문은 함수에서 결과삾을 반환할 때 사용한다.
+// return 문이 실행되면 반목문의 break; 문과 비슷하게 코드가 강제종료 된다. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function testAvg(arrData) {
+      var sum = 0;
+
+      for (var i = 0; i < arrData.length; i++) {
+        sum += Number(prompt(arrData[i] + "점수는?", "0"));
+      }
+
+      var avg = sum / arrData.length;
+      return avg;
+    }
+
+    var arrSubject = ["국어", "수학"];
+    var result = testAvg(arrSubject);
+
+    document.write("평균점수는 " + result + "점입니다.");
+  </script>
+</html>

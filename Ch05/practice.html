@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <style>
+    html {
+      background-color: #333;
+    }
+  </style>
+  <script>
+    var addNum = 0;
+    var subNum = 1000;
+    var tNum = 0;
+
+    var time = setTimeout(() => {
+      tNum++;
+      console.log("tNum : ", tNum);
+    }, 5000);
+
+    var auto_1 = setInterval(function name(params) {
+      addNum++;
+      console.log("addNum : ", addNum);
+      console.log(history.length);
+    }, 3000);
+
+    var auto_2 = setInterval(function name(params) {
+      subNum--;
+      console.log("subNum : ", subNum);
+    }, 3000);
+  </script>
+</html>
