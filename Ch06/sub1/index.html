@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lotto</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #container {
+      width: 100%;
+      height: 100vh;
+      background-color: rgb(31, 31, 31);
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+
+    h1:hover {
+      color: rgb(255, 198, 93);
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="lotto">
+        <h1>Get Lotto Number!</h1>
+        <h2 id="result">result</h2>
+        <input type="button" value="하나씩 뽑기" onclick="oneClick()" />
+        <input type="button" value="하나씩 뽑기" onclick="allClick()" />
+      </div>
+    </div>
+  </body>
+  <script>
+    var lottoNum = Math.ceil(Math.random() * 45);
+    var result = (document.getElementById("result").innerHTML = lottoNum);
+    var lottoList = [];
+
+    function oneClick(params) {
+      for (var i = 0; i < lottoList.length; i++) {
+        lottoList.push(result);
+      }
+    }
+  </script>
+</html>
